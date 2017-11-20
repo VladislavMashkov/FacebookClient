@@ -22,9 +22,9 @@ hunter_add_package(OpenSSL)
 find_package(OpenSSL REQUIRED)
 
 
-add_library(client INTERFACE)
+add_library(client STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp)
 
-target_include_directories(client INTERFACE
+target_include_directories(client PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
