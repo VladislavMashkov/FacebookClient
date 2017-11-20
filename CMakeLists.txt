@@ -41,14 +41,6 @@ if(BUILD_EXAMPLES)
   endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCE})
 endif()
 
-install(TARGETS client
-    EXPORT client-config
-    ARCHIVE DESTINATION lib
-    LIBRARY DESTINATION lib
-)
-
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
-install(EXPORT client-config DESTINATION cmake)
 
 if(BUILD_TESTS)
 enable_testing()
