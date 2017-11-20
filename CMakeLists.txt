@@ -29,6 +29,7 @@ target_include_directories(main PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
+
 if(BUILD_EXAMPLES)
   file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
   foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
