@@ -25,8 +25,8 @@ find_package(OpenSSL REQUIRED)
 add_library(client STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
 
 target_include_directories(client PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/facebook>
+  $<INSTALL_INTERFACE:include/facebook>
 )
 
 
