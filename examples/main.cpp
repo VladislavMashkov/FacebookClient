@@ -1,4 +1,4 @@
-#include <${SERVICE}/сlient.hpp>
+#include <facebook/сlient.hpp>
 #include <string>
 #include <map>
 #include <ios>
@@ -11,6 +11,6 @@ int main () {
   };
   using Facebook::Client;
   auto client = Client{ options };
-  auto is_connected = client->check_connection();
+  auto is_connected = client.check_connection();
   std::cout << std::boolalpha << (is_connected ? "connected" : "not connected") << std::endl;
 }
