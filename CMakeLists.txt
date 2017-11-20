@@ -32,8 +32,8 @@ target_include_directories(client INTERFACE
 if(BUILD_EXAMPLES)
   file(GLOB EXAMPLE_SOURCES "/examples/*.cpp")
   foreach(EXAMPLE_SOURCE)
-    get_filename_component(EXAMPLE_NAME  NAME_WE)
-    add_executable(${EXAMPLE_NAME})
+    get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
+    add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
     target_link_libraries(${EXAMPLE_NAME} client Catch::Catch PRIVATE CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
     install(TARGETS 
       RUNTIME DESTINATION bin
