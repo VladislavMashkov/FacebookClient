@@ -34,7 +34,7 @@ if(BUILD_EXAMPLES)
   foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCE})
     get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
     add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
-    target_link_libraries(${EXAMPLE_NAME} client Catch::Catch PRIVATE CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
+    target_link_libraries(${EXAMPLE_NAME} client)
     install(TARGETS 
       RUNTIME DESTINATION bin
     )
