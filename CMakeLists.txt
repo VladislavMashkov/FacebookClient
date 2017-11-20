@@ -30,7 +30,7 @@ target_include_directories(client PUBLIC
 )
 
 if(BUILD_EXAMPLES)
-  file(GLOB EXAMPLE_SOURCES "/examples/*.cpp")
+  file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
   foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCE})
     get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
     add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
