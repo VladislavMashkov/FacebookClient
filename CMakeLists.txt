@@ -22,23 +22,23 @@ hunter_add_package(OpenSSL)
 find_package(OpenSSL REQUIRED)
 
 
-add_library(client STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
+add_library(main STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
 
-target_include_directories(client PUBLIC
+target_include_directories(main PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
 
 if(BUILD_EXAMPLES)
   file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
-  foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCE})
+  foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
     get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
     add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
-    target_link_libraries(${EXAMPLE_NAME} client)
-    install(TARGETS 
+    target_link_libraries(${EXAMPLE_NAME} main)
+    install(TARGETS ${EXAMPLE_NAME}
       RUNTIME DESTINATION bin
     )
-  endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCE})
+  endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
 endif()
 
 
