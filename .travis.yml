@@ -1,7 +1,7 @@
 language: cpp
 
 script:
-- cmake -H. -B_build -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON
+- cmake -H. -B_build -DBUILD_EXAMPLES=ON
 - cmake --build _build
 
 
