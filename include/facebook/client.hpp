@@ -7,6 +7,7 @@ namespace Facebook{
   	char* id;
   	char* pass;
     using dict_t = std::map<std::string, std::string>;
+    dict_t info;
     Client(dict_t settings);
     auto check_connection() -> bool;
 
